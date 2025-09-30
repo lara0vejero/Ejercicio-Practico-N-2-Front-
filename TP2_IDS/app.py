@@ -2,15 +2,14 @@ from flask import Flask, render_template, request, redirect, flash, url_for
 from flask_mail import Mail, Message
 
 app = Flask(__name__)
-app.secret_key = "clave_secreta"
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
-app.config['MAIL_USERNAME'] = 'lovejero@fi.uba.ar'
+app.config['MAIL_USERNAME'] = 'amigosporeldeporte123@gmail.com'
 app.config['MAIL_PASSWORD'] = '...'
-app.config['MAIL_DEFAULT_SENDER'] = 'lovejero@fi.uba.ar'
+app.config['MAIL_DEFAULT_SENDER'] = 'amigosporeldeporte123@gmail.com'
 
 mail = Mail(app)
 
@@ -57,8 +56,6 @@ def registrarse():
                                    )
         
         mail.send(msg) 
-        
-        flash("Inscripcion enviada exitosamente")
         return redirect(url_for("registrarse"))
     else:
         return render_template("registration.html", info = info_evento)
