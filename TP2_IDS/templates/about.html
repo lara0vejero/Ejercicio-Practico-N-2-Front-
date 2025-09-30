@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="about_section layout_padding">
+         <div class="container">
+            <div class="about_main">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <h1 class="about_taital">Informacion sobre el evento</h1><br>
+                     <p class="about_text">
+                        Organizador: {{ info.organizador }}<br>
+                        Descripcion: {{ info.descripcion }}<br>
+                        Fecha: {{ info.fecha }}<br>
+                        Hora: {{ info.horario }}<br>
+                        Tipo de carrera: {{ info.tipo_carrera }}
+                     </p>
+                     <br>
+                     <div class="about_img"><img src="{{ url_for('static', filename = 'images/about-img.png') }}"></div>
+                     <div class="readmore_bt">
+                        <button id="leer-mas">Leer mas</button>
+                        <div id="texto_oculto">
+                        <ol>
+                           <li><strong>Ruta 30 km – "Circuito Corto de Tandil"</strong></li>
+                        Salida / Llegada: Parque Independencia<br>
+                        Recorrido: Parque Independencia → Castillo Morisco → Cerro El Centinela → Cerro La Movediza → Represa → regreso → Parque Independencia<br>
+                        Terreno: Senderos de tierra, caminos rurales y algunas zonas técnicas<br>
+                        Dificultad: Media, adecuada para ciclistas intermedios<br>
+                        </ol><br>
+
+                        <ol>
+                           <li><strong>Ruta 80 km – "Vuelta Completa a Tandil"</strong></li>
+                           Salida / Llegada: Parque Independencia<br>
+                           Recorrido: Parque Independencia → Tandil Oeste → Gardey → Azcuénaga → regreso por caminos rurales → Parque Independencia<br>
+                           Terreno: Senderos de tierra, caminos rurales y algunas zonas técnicas<br>
+                           Dificultad: Alta, recomendada para ciclistas experimentados</ol>
+                     </div>
+                        
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>      
+{% endblock %}
+
+
